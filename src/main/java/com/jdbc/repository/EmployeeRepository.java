@@ -18,21 +18,21 @@ public class EmployeeRepository {
 		EmployeeRepository employeeInsert = new EmployeeRepository();
 		//employeeInsert.insertWithStatement();
 		//List<Employee> empList1		= employeeInsert.retrieveEmployeesWithStmt();
-		Employee e1 = employeeInsert.getEmployeeByEmpidWithStmt("12");
-		System.out.println( e1.getEmpid() + " , "  +e1.getEmpname() + " , "  +  e1.getEmpdesg());
-		Employee e2 = employeeInsert.getEmployeeByEmpidWithPstmt("13");
-		System.out.println( e2.getEmpid() + " , "  +e2.getEmpname() + " , "  +  e2.getEmpdesg());
+		//Employee e1 = employeeInsert.getEmployeeByEmpidWithStmt("12");
+		//System.out.println( e1.getEmpid() + " , "  +e1.getEmpname() + " , "  +  e1.getEmpdesg());
+		//Employee e2 = employeeInsert.getEmployeeByEmpidWithPstmt("13");
+		//System.out.println( e2.getEmpid() + " , "  +e2.getEmpname() + " , "  +  e2.getEmpdesg());
 		//List<Employee> empList1		= employeeInsert.selectMulitipleFromEmployeesWithStmt();
 		//employeeInsert.updateWithStatementOneRow();
 		//employeeInsert.updateWithStatementMultipleRows();
 		//employeeInsert.deleteWithStmt();
 		//employeeInsert.insertWithPreparedStatement();
 		//List<Employee> empList1		= employeeInsert.retrieveEmployeesWithPstmt();
-		//List<Employee> empList1		= employeeInsert.selectMulitipleFromEmployeesWithPstmt();
+		List<Employee> empList1		= employeeInsert.selectMulitipleFromEmployeesWithPstmt();
 		//employeeInsert.updateWithPrepareStatementOneRow();
 		//employeeInsert.updateWithPrepareStatementMultipleRows();
 		//employeeInsert.deleteWithPstmt();
-	    // employeeInsert.printEmployees(empList1);
+	     employeeInsert.printEmployees(empList1);
 
 	}
 
