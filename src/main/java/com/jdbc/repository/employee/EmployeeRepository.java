@@ -1,4 +1,4 @@
-package com.jdbc.repository;
+package com.jdbc.repository.employee;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.jdbc.domain.Employee;
+import com.jdbc.util.DataBaceConnectionUtil;
 
 public class EmployeeRepository {
 
@@ -18,16 +19,17 @@ public class EmployeeRepository {
 		EmployeeRepository employeeInsert = new EmployeeRepository();
 		// employeeInsert.insertWithStatement();
 		
-		// List<Employee> empList1 = employeeInsert.retrieveEmployeesWithStmt();
+		//List<Employee> empList1 = employeeInsert.retrieveEmployeesWithStmt();
 		
-		// Employee e1 = employeeInsert.getEmployeeByEmpidWithStmt("12");
-		// System.out.println( e1.getEmpid() + " , " +e1.getEmpname() + " , " + e1.getEmpdesg());
+		//employeeInsert.printEmployees(empList1);
+		Employee e1 = employeeInsert.getEmployeeByEmpidWithStmt("12");
+		System.out.println( e1.getEmpid() + " , " +e1.getEmpname() + " , " + e1.getEmpdesg());
 		
 		// Employee e2 = employeeInsert.getEmployeeByEmpidWithPstmt("13");
 		// System.out.println( e2.getEmpid() + " , " +e2.getEmpname() + " , " + e2.getEmpdesg());
 		
-		//List<Employee> empList1 = employeeInsert.selectMulitipleColumnsFromEmployeeWithStmt();
-		//employeeInsert.printEmployees(empList1);
+		//List<Employee> empList2 = employeeInsert.selectMulitipleColumnsFromEmployeeWithStmt();
+		//employeeInsert.printEmployees(empList2);
 		
 		//employeeInsert.updateEmployeeNameUsingEmpidWithStatement("Srinu","10");
 		
@@ -35,20 +37,20 @@ public class EmployeeRepository {
 		
 		// employeeInsert.deleteEmployeeForEmpidWithStmt("16");
 		
-		employeeInsert.insertWithPreparedStatement();
+		//employeeInsert.insertWithPreparedStatement();
 		
-		// List<Employee> empList2 =employeeInsert.retrieveEmployeesWithPstmt();
+		// List<Employee> empList3 =employeeInsert.retrieveEmployeesWithPstmt();
 		
-		//employeeInsert.printEmployees(empList2);
-		
-		//List<Employee> empList3 = employeeInsert.getEmployeesusingEmpNameWithPstmt("srinu");
 		//employeeInsert.printEmployees(empList3);
+		
+		//List<Employee> empList4 = employeeInsert.getEmployeesusingEmpNameWithPstmt("srinu");
+		//employeeInsert.printEmployees(empList4);
 		
 		 //employeeInsert.updateEmpNameUsingEmpIdWithPrepareStatement("nag" , "13");
 		
 		// employeeInsert.updateEmployeeUsingEmpIdWithPrepareStatement("srinu" , "developer" ,"12");
 		
-		employeeInsert.deleteEmployeeUsingEmpIdWithPstmt("11");
+		//employeeInsert.deleteEmployeeUsingEmpIdWithPstmt("11");
 		
 		
 	}
@@ -141,6 +143,7 @@ public class EmployeeRepository {
 			rs = stmt.executeQuery(sql);
 			while (rs.next()) {
 				e = new Employee();
+				
 				e.setEmpid(rs.getString("empid"));
 				e.setEmpname(rs.getString("empName"));
 				e.setEmpdesg(rs.getString("designation"));
@@ -296,12 +299,9 @@ public class EmployeeRepository {
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
 				Employee e = new Employee();
-				String empid = rs.getString("empid");
-				String empname = rs.getString("empName");
-				String desg = rs.getString("designation");
-				e.setEmpid(empid);
-				e.setEmpname(empname);
-				e.setEmpdesg(desg);
+				e.setEmpid(rs.getString("empid"));
+				e.setEmpname(rs.getString("empName"));
+				e.setEmpdesg(rs.getString("designation"));
 				emps.add(e);
 			}
 		}

@@ -1,4 +1,4 @@
-package com.jdbc.repository;
+package com.jdbc.repository.address;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.jdbc.domain.Address;
+import com.jdbc.util.DataBaceConnectionUtil;
 
 public class AddressRepository {
 

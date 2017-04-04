@@ -1,4 +1,4 @@
-package com.jdbc.repository;
+package com.jdbc.repository.employee;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,16 +9,18 @@ import java.util.List;
 
 
 
+
 import org.apache.commons.collections4.CollectionUtils;
 
 import com.jdbc.domain.Address;
 import com.jdbc.domain.Employee;
+import com.jdbc.util.DataBaceConnectionUtil;
 
 public class EmployeeAddressRepository {
 
 	public static void main(String[] args) {
 		EmployeeAddressRepository employeeAddressRepository = new EmployeeAddressRepository();
-		String empid = "15";
+		String empid = "12";
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
