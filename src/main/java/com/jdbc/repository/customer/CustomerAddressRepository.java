@@ -38,7 +38,7 @@ public class CustomerAddressRepository {
           if(null != customer){
         	  customer.setAddressList(addresses);
           }
-          customerAddressRepository.printEmployeeDetails(customer);
+          customerAddressRepository.printCustomerDetails(customer);
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		} finally {
@@ -104,7 +104,7 @@ public class CustomerAddressRepository {
 		return addresses;
 	}
 
-	private void printEmployeeDetails(Customer customer) {
+	private void printCustomerDetails(Customer customer) {
      if(null != customer){
 		System.out.println(customer.getcId() + "," + customer.getcName() + "," + customer.getcEmailId());
      

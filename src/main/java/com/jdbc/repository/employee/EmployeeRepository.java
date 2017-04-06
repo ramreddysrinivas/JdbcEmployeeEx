@@ -19,11 +19,11 @@ public class EmployeeRepository {
 		EmployeeRepository employeeInsert = new EmployeeRepository();
 		// employeeInsert.insertWithStatement();
 		
-		//List<Employee> empList1 = employeeInsert.retrieveEmployeesWithStmt();
+		List<Employee> empList1 = employeeInsert.retrieveEmployeesWithStmt();
+		employeeInsert.printEmployees(empList1);
 		
-		//employeeInsert.printEmployees(empList1);
-		Employee e1 = employeeInsert.getEmployeeByEmpidWithStmt("12");
-		System.out.println( e1.getEmpid() + " , " +e1.getEmpname() + " , " + e1.getEmpdesg());
+		//Employee e1 = employeeInsert.getEmployeeByEmpidWithStmt("12");
+		//System.out.println( e1.getEmpid() + " , " +e1.getEmpname() + " , " + e1.getEmpdesg());
 		
 		// Employee e2 = employeeInsert.getEmployeeByEmpidWithPstmt("13");
 		// System.out.println( e2.getEmpid() + " , " +e2.getEmpname() + " , " + e2.getEmpdesg());
@@ -99,8 +99,9 @@ public class EmployeeRepository {
 			stmt = con.createStatement();
 			String sql = "select empid,empname,designation from employee";
 			rs = stmt.executeQuery(sql);
+			Employee e=null;
 			while (rs.next()) {
-				Employee e = new Employee();
+				e = new Employee();
 				/*String empid = rs.getString("empid");
 				String empname = rs.getString("empName");
 				String desg = rs.getString("designation");
